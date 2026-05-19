@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply min-h-screen overflow-x-hidden bg-light text-dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+@layer components {
+  .page-container {
+    @apply px-5 max-w-lg mx-auto pb-24 pt-6;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-dark mb-5;
+  }
+
+  .card {
+    @apply bg-white rounded-3xl p-5 shadow-card;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 text-white font-semibold rounded-2xl px-6 py-3.5 
+           transition-all duration-300 active:scale-95 hover:bg-primary-600 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-500 text-primary-500 font-semibold rounded-2xl px-6 py-3.5 
+           transition-all duration-300 active:scale-95 hover:bg-primary-50;
+  }
+
+  .btn-ghost {
+    @apply text-dark font-medium rounded-2xl px-5 py-3 
+           transition-all duration-300 hover:bg-gray-100;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3.5 bg-gray-50 border border-gray-200 rounded-2xl 
+           text-dark placeholder-gray-400 outline-none transition-all duration-300
+           focus:border-primary-500 focus:ring-2 focus:ring-primary-100;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+
+  .badge-orange {
+    @apply badge bg-orange-100 text-accent-orange;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center gap-1 px-4 py-1 transition-colors duration-200;
+  }
+
+  .nav-icon {
+    @apply w-6 h-6 transition-colors duration-200;
+  }
+
+  .progress-bar {
+    @apply h-2 bg-gray-100 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-500 ease-out;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg rounded-3xl shadow-soft;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-primary-400;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
