@@ -38,6 +38,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/WorkoutDetailView.vue')
       },
       {
+        path: 'workouts/:id/timer',
+        name: 'WorkoutTimer',
+        component: () => import('@/views/WorkoutTimerView.vue')
+      },
+      {
         path: 'progress',
         name: 'Progress',
         component: () => import('@/views/ProgressView.vue')

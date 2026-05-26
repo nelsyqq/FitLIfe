@@ -54,7 +54,7 @@
       </div>
 
       <!-- Start Button -->
-      <AppButton block size="lg" @click="startWorkout">
+      <AppButton block size="lg" @click="goToTimer">
         <Play class="w-5 h-5 mr-2" />
         Начать тренировку
       </AppButton>
@@ -105,19 +105,9 @@ const similarWorkouts = computed(() => {
     .slice(0, 3)
 })
 
-function startWorkout() {
+function goToTimer() {
   if (workout.value) {
-    workoutStore.startWorkout(workout.value)
-    workoutStore.completeWorkout({
-      id: Date.now().toString(),
-      workoutId: workout.value.id,
-      userId: 'u1',
-      date: new Date().toISOString().split('T')[0],
-      duration: workout.value.duration,
-      caloriesBurned: workout.value.calories,
-      exercises: [],
-      completed: true
-    })
+    router.push(`/app/workouts/${workout.value.id}/timer`)
   }
 }
 </script>
